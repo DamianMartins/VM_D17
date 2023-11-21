@@ -20,13 +20,13 @@ jobs:
         run: |
           docker pull hadolint/hadolint
           docker run --rm -i hadolint/hadolint < ./Dockerfile
+# ...
 
       #trivy
       - name: Analyze Vulnerabilities
         run: |
           docker pull aquasec/trivy
           docker run --rm -v $PWD:/app -w /app aquasec/trivy --severity HIGH,CRITICAL
-
       - name: Check Trivy Exit Code
         run: echo "Trivy exit code: $?"
 
@@ -34,7 +34,6 @@ jobs:
       - name: Security Testing
         run: |
           node scripts/security-test.js
-
       # ...
 
       #subir imagen
@@ -43,3 +42,4 @@ jobs:
           docker build -t tu_usuario/tu_aplicacion:latest ./app
           docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
           docker push tu_usuario/tu_aplicacion:latest
+
