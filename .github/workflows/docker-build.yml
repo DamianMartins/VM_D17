@@ -19,7 +19,7 @@ jobs:
       - name: Lint Dockerfile
         run: |
           docker pull hadolint/hadolint
-          docker run --rm -i hadolint/hadolint < ./app/Dockerfile
+          docker run --rm -i hadolint/hadolint < ./Dockerfile
 
 
 
