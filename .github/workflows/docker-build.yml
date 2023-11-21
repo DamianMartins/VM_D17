@@ -38,6 +38,6 @@ jobs:
       # subir imagen
       - name: Build and Push Docker Image
         run: |
-          docker build -t tu_usuario/tu_aplicacion:latest ./app
+          docker build -t damiankaio/my-docker-image-d17:latest .
           docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
-          docker push tu_usuario/tu_aplicacion:latest
+          docker push damiankaio/my-docker-image-d17:latest
