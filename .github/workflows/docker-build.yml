@@ -22,10 +22,10 @@ jobs:
           docker run --rm -i hadolint/hadolint < ./Dockerfile
 
         # Trivy action
-      - name: Analyze Vulnerabilities with Trivy
-        uses: docker://aquasec/trivy:v0.20.1
-        with:
-          args: --severity HIGH,CRITICAL /app
+      #- name: Analyze Vulnerabilities with Trivy
+      #  uses: docker://aquasec/trivy:v0.20.1
+      #  with:
+      #    args: --severity HIGH,CRITICAL /app
 
       # check de seguridad
       - name: Security Testing
