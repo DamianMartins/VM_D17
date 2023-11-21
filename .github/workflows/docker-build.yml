@@ -21,13 +21,11 @@ jobs:
           docker pull hadolint/hadolint
           docker run --rm -i hadolint/hadolint < ./Dockerfile
 
-      # trivy
-      - name: Analyze Vulnerabilities
-        run: |
-          docker pull aquasec/trivy
-          docker run --rm -v $PWD:/app -w /app aquasec/trivy --severity HIGH,CRITICAL
-      - name: Check Trivy Exit Code
-        run: echo "Trivy exit code: $?"
+        # Trivy action
+      - name: Analyze Vulnerabilities with Trivy
+        uses: docker://aquasec/trivy:v0.20.1
+        with:
+          args: --severity HIGH,CRITICAL /app
 
       # check de seguridad
       - name: Security Testing
