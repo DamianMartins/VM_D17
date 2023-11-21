@@ -34,7 +34,9 @@ jobs:
       - name: Security Testing
         run: |
           node scripts/security-test.js
-          
+
+      # ...
+
       #subir imagen
       - name: Build and Push Docker Image
         run: |
