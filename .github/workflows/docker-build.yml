@@ -27,9 +27,15 @@ jobs:
       #  with:
       #    args: --severity HIGH,CRITICAL /app
 
-      # check de seguridad
       - name: Security Testing
+<<<<<<< HEAD
         run: python3 ./src/security-test.py
+=======
+        run: |
+          python3 /app/src/security-test.py
+
+
+>>>>>>> f00e780b8237af8d8794cd574102b04ac7bb5722
       # ...
 
       # subir imagen
