@@ -28,8 +28,7 @@ jobs:
       #    args: --severity HIGH,CRITICAL /app
 
       - name: Security Testing
-        run: |
-          python3 /app/src/security-test.py
+        run: python3 ./src/security-test.py
 
       # subir imagen
       - name: Build and Push Docker Image
