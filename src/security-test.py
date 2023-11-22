@@ -1,7 +1,7 @@
 import re
 
 # Archivo HTML
-html_file_path = "/app/index.html"
+html_file_path = "./index.html"
 with open(html_file_path, "r") as html_file:
     html_content = html_file.read()
 
@@ -20,7 +20,7 @@ if external_resources:
         print(f"- {resource}")
 
 # Archivo CSS
-css_file_path = "/app/style.css"
+css_file_path = "./style.css"
 with open(css_file_path, "r") as css_file:
     css_content = css_file.read()
 
@@ -30,7 +30,7 @@ if "eval(" in css_content:
     print("\nSe encontró el patrón 'eval(' en el archivo CSS. Esto podría ser una vulnerabilidad.")
 
 # Archivo JS
-js_file_path = "/app/script.js"
+js_file_path = "./script.js"
 with open(js_file_path, "r") as js_file:
     js_content = js_file.read()
 
@@ -40,7 +40,7 @@ if "alert(" in js_content:
     print("\nSe encontró el patrón 'alert(' en el archivo JavaScript. Esto podría ser una vulnerabilidad.")
 
 # Archivo nginx.conf
-nginx_conf_path = "/app/nginx.conf"
+nginx_conf_path = "./nginx.conf"
 with open(nginx_conf_path, "r") as nginx_conf_file:
     nginx_conf_content = nginx_conf_file.read()
 
