@@ -1,8 +1,7 @@
-//test5
 const fs = require("fs");
 const path = require("path");
 
-const filePath = path.join(__dirname, "src", "security-test.js");
+const filePath = "/app/src/security-test.js";  // Ruta completa al script
 
 const content = fs.readFileSync(filePath, "utf8");
 const vulnerabilities = snyk.analyze(content);
@@ -13,3 +12,4 @@ if (vulnerabilities.length > 0) {
     console.log(`- ${vulnerability.description}`);
   });
 }
+
