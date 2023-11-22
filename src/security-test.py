@@ -2,7 +2,7 @@ import subprocess
 from bs4 import BeautifulSoup
 
 # Ruta al archivo index.html
-html_file_path = "/usr/share/nginx/html/index.html"
+html_file_path = "../index.html"
 
 # Leer el contenido del archivo HTML
 with open(html_file_path, "r") as html_file:
