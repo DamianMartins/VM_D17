@@ -1,19 +1,15 @@
-// test4
+//test5
 const fs = require("fs");
 const path = require("path");
 
-const files = fs.readdirSync(path.join(__dirname, "src"));
+const filePath = path.join(__dirname, "src", "security-test.js");
 
-files.forEach((file) => {
-  const filePath = path.join(__dirname, "src", file);
-  if (file.endsWith(".js")) {
-    const content = fs.readFileSync(filePath, "utf8");
-    const vulnerabilities = snyk.analyze(content);
-    if (vulnerabilities.length > 0) {
-      console.log(`Encontradas vulnerabilidades en el archivo ${file}`);
-      vulnerabilities.forEach((vulnerability) => {
-        console.log(`- ${vulnerability.description}`);
-      });
-    }
-  }
-});
+const content = fs.readFileSync(filePath, "utf8");
+const vulnerabilities = snyk.analyze(content);
+
+if (vulnerabilities.length > 0) {
+  console.log(`Encontradas vulnerabilidades en el archivo security-test.js`);
+  vulnerabilities.forEach((vulnerability) => {
+    console.log(`- ${vulnerability.description}`);
+  });
+}
