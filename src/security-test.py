@@ -30,7 +30,7 @@ if "eval(" in css_content:
     print("\nSe encontró el patrón 'eval(' en el archivo CSS. Esto podría ser una vulnerabilidad.")
 
 # Archivo JS
-js_file_path = "/app/scrip.js"
+js_file_path = "/app/script.js"
 with open(js_file_path, "r") as js_file:
     js_content = js_file.read()
 
